@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itcast.domain" catalog="ssh_xml">
+	<class name="Book" table="book">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"/>
+		<property name="price"/>
+		
+	</class>
+	<!-- 命名查询NamedQuery 根据书名模糊查询 -->
+	<query name="Book.findByNameLike">
+		from Book where name like ?
+	</query>
+	<sql-query name="Book.findByNameLikeSQL">
+		<!-- 绑定返回结果到Book对象 -->
+		<return class="cn.itcast.domain.Book" />
+		select * from book where name like ?
+	</sql-query>
+	
+</hibernate-mapping>   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- hibernate 必备信息 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql:///ssh_xml</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<!-- 数据库方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+		<!-- hibernate 可选信息 -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+
+		<!-- 事务自动提交 -->
+		<!--		<property name="connection.autocommit">true</property>		-->
+
+		<!-- 数据库建表策略 -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- 添加映射文件 -->
+		<mapping resource="cn/itcast/domain/Book.hbm.xml" />
+
+	</session-factory>
+
+</hibernate-configuration>
+	
+	
+	
